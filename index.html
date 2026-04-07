@@ -3,77 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RecArena | POV-MAX Broadcast Engine</title>
+    <title>RecArena | Cyber-Glitch Broadcast</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Changa', sans-serif; background: transparent; overflow: hidden; width: 1920px; height: 1080px; }
-        
-        /* Tactical black void panels */
-        .glass-dark {
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+        body { 
+            font-family: 'Orbitron', sans-serif; 
+            background: transparent; 
+            overflow: hidden; 
+            width: 1920px; 
+            height: 1080px; 
+            color: white;
         }
 
-        /* Continuous neon green border on the outer edges */
-        .neon-g-side { border-left: 5px solid #39FF14; box-shadow: -10px 0 20px rgba(57, 255, 20, 0.3); }
-        .neon-g-side-right { border-right: 5px solid #39FF14; box-shadow: 10px 0 20px rgba(57, 255, 20, 0.3); }
+        /* The Dark Glitch Aesthetic */
+        .cyber-bg {
+            background: rgba(10, 10, 10, 0.95);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        }
 
-        /* Central merged line */
-        .merge-line { width: 4px; background: rgba(255, 255, 255, 0.05); }
+        .accent-red { color: #FF4141; text-shadow: 0 0 10px rgba(255, 65, 65, 0.5); }
+        .border-red { border: 2px solid #FF4141; }
 
-        /* Ticker pulse */
-        .pulse-text { animation: pulse-animation 2s infinite alternate; }
-        @keyframes pulse-animation { from { opacity: 0.5; } to { opacity: 1; } }
+        /* Glitch Animation for Labels */
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        .glitch-hover:hover { animation: glitch 0.3s linear infinite; }
+
+        .stat-box {
+            background: rgba(255, 65, 65, 0.1);
+            border-left: 3px solid #FF4141;
+            padding: 4px 12px;
+        }
     </style>
 </head>
 <body class="relative">
 
-    <div class="absolute top-0 w-full flex justify-between items-center px-12 pt-6 pointer-events-none">
-        <div class="glass-dark p-5 rounded-r-2xl neon-g-side">
-            <h1 class="text-white text-3xl font-extrabold tracking-tighter">REC<span class="text-[#39FF14]">ARENA</span></h1>
-            <p class="text-[10px] text-white/50 uppercase tracking-[0.3em]">POV-MAX ACTIVATED</p>
+    <div class="absolute top-0 w-full flex justify-between items-start px-10 pt-6 pointer-events-none">
+        <div class="cyber-bg p-4 rounded-sm border-b-4 border-[#FF4141]">
+            <h1 class="text-3xl font-black italic tracking-tighter">REC<span class="accent-red">ARENA</span></h1>
+            <p class="text-[9px] text-white/40 uppercase tracking-[0.4em] mt-1">Production Engine // Red Protocol</p>
         </div>
-        
-        <div class="glass-dark px-10 py-3 rounded-full flex items-center gap-4 border border-white/5">
-            <div class="w-4 h-4 bg-red-600 rounded-full animate-pulse shadow-[0_0_10px_red]"></div>
-            <span class="text-white font-extrabold tracking-widest uppercase text-base">Broadcast Live</span>
+
+        <div class="flex gap-4 mt-2">
+            <div class="cyber-bg px-4 py-2 rounded-sm flex items-center gap-3 border border-white/5 glitch-hover">
+                <span class="text-[10px] text-white/40 uppercase font-bold">Youtube</span>
+                <span class="text-xs accent-red uppercase">RecShop BD</span>
+            </div>
+            <div class="cyber-bg px-4 py-2 rounded-sm flex items-center gap-3 border border-white/5 glitch-hover">
+                <span class="text-[10px] text-white/40 uppercase font-bold">Facebook</span>
+                <span class="text-xs accent-red uppercase">Recbuilder</span>
+            </div>
         </div>
-        <div class="w-64"></div>
     </div>
 
-    <div class="absolute inset-0 flex items-center justify-center pointer-events-none mt-16 px-4">
-        
-        <div class="w-[1880px] h-[529px] flex items-stretch border-2 border-white/5 rounded-xl shadow-[0_0_80px_rgba(0,0,0,0.7)] relative bg-black/10">
+    <div class="absolute inset-0 flex items-center justify-center px-4 mt-20 pointer-events-none">
+        <div class="w-[1880px] h-[529px] flex items-stretch border border-white/10 shadow-2xl bg-black/20">
             
-            <div class="w-full h-full relative border-r-2 border-white/5">
-                <div class="absolute inset-0 bg-transparent rounded-l-xl"></div>
-                <div class="absolute bottom-3 left-3 px-3 py-1 bg-black/60 text-[10px] text-white/60 border border-white/10 uppercase tracking-widest">Player 1 POV // SIGNAL</div>
+            <div class="w-full h-full relative border-r border-white/10">
+                <div class="absolute top-0 left-0 stat-box rounded-br-lg">
+                    <span class="text-[10px] uppercase tracking-widest font-bold">Signal: P1_POV</span>
+                </div>
             </div>
 
             <div class="w-full h-full relative">
-                <div class="absolute inset-0 bg-transparent rounded-r-xl"></div>
-                <div class="absolute bottom-3 right-3 px-3 py-1 bg-black/60 text-[10px] text-white/60 border border-white/10 uppercase tracking-widest">Player 2 POV // SIGNAL</div>
+                <div class="absolute top-0 right-0 stat-box rounded-bl-lg border-l-0 border-r-3 border-[#FF4141]">
+                    <span class="text-[10px] uppercase tracking-widest font-bold">Signal: P2_POV</span>
+                </div>
             </div>
 
         </div>
-
     </div>
 
-    <div class="absolute bottom-0 left-0 w-full px-12 pb-6 flex justify-between items-end text-sm uppercase tracking-[0.2em] font-medium pointer-events-none">
+    <div class="absolute bottom-0 w-full px-10 pb-6 flex justify-between items-end pointer-events-none">
         
-        <div class="glass-dark px-6 py-2 rounded-l-xl neon-g-side">
-             Powered by <span class="text-white/90">RecShop BD</span>
-        </div>
-        
-        <div class="glass-dark px-8 py-1 rounded-t-lg text-[11px] text-[#39FF14]/80 uppercase tracking-[0.4em] pulse-text">
-            ARCHITECTING BD ESPORTS INFRASTRUCTURE
+        <div class="flex flex-col gap-2">
+            <div class="stat-box w-64">
+                <p class="text-[9px] text-white/50 uppercase">Latest Subscriber</p>
+                <p class="text-sm font-bold accent-red">Waiting for Feed...</p>
+            </div>
+            <div class="stat-box w-64">
+                <p class="text-[9px] text-white/50 uppercase">Latest Member</p>
+                <p class="text-sm font-bold accent-red">None Active</p>
+            </div>
         </div>
 
-        <div class="glass-dark px-6 py-2 rounded-r-xl neon-g-side-right">
-             Dev by <span class="text-white/90">Recbuilder</span>
+        <div class="cyber-bg px-12 py-2 rounded-t-xl border-x border-white/5">
+            <p class="text-[10px] tracking-[0.5em] text-[#FF4141] font-bold uppercase animate-pulse">
+                Architecting the Future of BD Esports Infrastructure
+            </p>
+        </div>
+
+        <div class="flex flex-col items-end gap-1">
+            <div class="cyber-bg px-6 py-2 rounded-sm border-r-4 border-[#FF4141]">
+                <p class="text-[9px] text-white/30 text-right uppercase">System Dev</p>
+                <h2 class="text-xl font-bold tracking-tighter">REC<span class="accent-red">BUILDER</span></h2>
+            </div>
+            <p class="text-[8px] text-white/20 uppercase tracking-widest mt-1">Powered by RecShop BD</p>
         </div>
     </div>
 
